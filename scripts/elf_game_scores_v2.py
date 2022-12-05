@@ -15,6 +15,11 @@ import pandas as pd
 
 def count_outcomes(games: list) -> int:
     """Function to count number of wins
+
+    Args:
+        games: as list of all player outcomes
+
+    Returns: summation of all player outcomes
     """
     #X for Lose, Y for Draw, and Z for win
     outcome_dict = {"X": 0, "Y": 3, "Z": 6 }
@@ -23,6 +28,11 @@ def count_outcomes(games: list) -> int:
 
 def sum_shapes_scores(games: list) -> int:
     """Function to return list of played shapes
+
+    Args:
+        games: as list of all player outcomes
+
+    Returns: summation of the possible outcomes of the games
     """
     rock_list = [ "A Y", "B X", "C Z" ]
     paper_list = [ "A Z", "B Y", "C X" ]

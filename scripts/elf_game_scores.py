@@ -15,6 +15,11 @@ import pandas as pd
 
 def sum_shape_scores(games: list) -> int:
     """Function to count shape specific scores
+
+    Args:
+        games: list of games outcomes
+
+    Returns: count of game scores based on specific shape
     """
     shape_dict = {
         "A": 1,
@@ -29,6 +34,11 @@ def sum_shape_scores(games: list) -> int:
 
 def count_wins(games: list) -> int:
     """Function to count number of wins
+
+    Args:
+        games: list of games outcomes
+
+    Returns: count of winning occurrances
     """
     win_list = [ "A Y", "B Z", "C X" ]
     count_occ = [ games.count(x) for x in win_list ]
@@ -36,6 +46,11 @@ def count_wins(games: list) -> int:
 
 def count_losses(games: list) -> int:
     """Function to count the number of losses
+
+    Args:
+        games: list of games outcomes
+
+    Returns: count of losing occurrances
     """
     lose_list = [ "A Z", "B X", "C Y" ]
     count_occ = [ games.count(x) for x in lose_list ]
@@ -43,6 +58,11 @@ def count_losses(games: list) -> int:
 
 def count_draws(games: list) -> int:
     """Function to count the number of draws
+
+    Args:
+        games: list of games outcomes
+
+    Returns: count of drawing occurrances
     """
     draw_list = [ "A X", "B Y", "C Z" ]
     count_occ = [ games.count(x) for x in draw_list ]
