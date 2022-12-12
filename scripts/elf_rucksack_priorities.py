@@ -21,7 +21,7 @@ def get_priority(letter: str) -> dict:
     Args:
         letter: single alphabetical letter in upper or lower case
 
-    Returns: converstion of character to expected int
+    Returns: conversion of character to expected int
     """
     # ord "a" = 97
     # ord "A" = 65

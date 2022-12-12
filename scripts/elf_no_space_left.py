@@ -8,6 +8,7 @@ The update needs unused space of at least 30000000
 """
 import argparse
 
+
 def add_path_to_directories(path: str, directories: dict) -> dict:
     """Function to add a directory if not an existing directory path
 
@@ -24,8 +25,7 @@ def add_path_to_directories(path: str, directories: dict) -> dict:
 
 # pylint: disable=R0914,R0915
 def main() -> None:
-    """Main function to calculate and return the total sum of all files
-    """
+    """Main function to calculate and return the total sum of all files"""
     parser = argparse.ArgumentParser("")
     parser.add_argument("--input_list", help="", type=str)
     parser.parse_args()
@@ -33,7 +33,7 @@ def main() -> None:
 
     objects_oi = []
     input_file = args.input_list
-    with open (input_file, encoding="utf-8") as file:
+    with open(input_file, encoding="utf-8") as file:
         objects_in = file.read()
         objects_oi = objects_in.splitlines()
 
@@ -44,7 +44,9 @@ def main() -> None:
     for cmd in objects_oi:
         if cmd.startswith("$ cd"):
             if not cmd.startswith("$ cd ..") and not cmd.startswith("$ cd /"):
-                curr_path += f"/{cmd.split()[-1]}" if curr_path != "/" else cmd.split()[-1]
+                curr_path += (
+                    f"/{cmd.split()[-1]}" if curr_path != "/" else cmd.split()[-1]
+                )
                 curr_struct.append(curr_path)
                 directories_size = add_path_to_directories(curr_path, directories_size)
 
@@ -68,7 +70,7 @@ def main() -> None:
 
     total_system_size = list(directories_size.values())
     sort_total_size = sorted(total_system_size)
-    target_size = (all_file_sizes - 40000000)
+    target_size = all_file_sizes - 40000000
     size_to_remove = int()
     for bites in sort_total_size:
         if bites >= target_size:
