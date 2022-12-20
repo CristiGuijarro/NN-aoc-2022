@@ -15,7 +15,7 @@ import argparse
 from typing import List
 
 
-def get_priority(letter: str) -> dict:
+def get_priority(letter: str) -> int:
     """Assigns the priority to each item passed in
 
     Args:
